@@ -1,0 +1,85 @@
+import "./Projects.css";
+import "./Skills.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import reactlogo from "../assets/img/react-js-icon.svg";
+import Jslogo from "../assets/img/icons8-javascript-480.png";
+import Nodelogo from "../assets/img/icons8-nodejs-480.png";
+import Tailwindlogo from "../assets/img/tailwind-css-icon.png";
+import Mongologo from "../assets/img/mongodb_original_wordmark_logo_icon_146425.png";
+import Tslogo from "../assets/img/file_type_typescript_official_icon_130107.png";
+import { Projects } from "./Projects";
+
+export const Skills = () => {
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
+  return (
+    <>
+      <section className="skill" id="skills">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <div className="skill-bx wow zoomIn">
+                <h2>Skills</h2>
+                <p>
+                  {
+                    "I have expertise in the MERN (MongoDB, Express.js, React, Node.js) stack, encompassing front-end and back-end technologies, database management, API design, security, version control, and deployment, enabling efficient full-stack web application development."
+                  }
+                </p>
+                <Carousel
+                  responsive={responsive}
+                  infinite={true}
+                  className="owl-carousel owl-theme skill-slider"
+                >
+                  <div className="item">
+                    <img src={reactlogo} alt="logo" />
+                    {/* <h5>Web Development</h5> */}
+                  </div>
+                  <div className="item">
+                    <img src={Jslogo} alt="logo" />
+                    {/* <h5>Brand Identity</h5> */}
+                  </div>
+                  <div className="item">
+                    <img src={Nodelogo} alt="logo" />
+                    {/* <h5>Logo Design</h5> */}
+                  </div>
+                  <div className="item">
+                    <img src={Tailwindlogo} alt="logo" />
+                    {/* <h5>Web Development</h5> */}
+                  </div>
+                  <div className="item">
+                    <img src={Mongologo} alt="logo" />
+                    {/* <h5>Web Development</h5> */}
+                  </div>
+                  <div className="item">
+                    <img src={Tslogo} alt="logo" />
+                    {/* <h5>Web Development</h5> */}
+                  </div>
+                </Carousel>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <img className="background-image-left" src={SkillsBack} alt="logo" /> */}
+      </section>
+      <Projects />
+    </>
+  );
+};
